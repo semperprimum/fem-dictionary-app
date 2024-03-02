@@ -34,7 +34,7 @@ const ThemeContextProvider: React.FC<ThemeContextProps> = ({ children }) => {
     }
 
     // Default to 'dark'
-    return "dark";
+    return "light";
   });
 
   const toggleTheme = () => {

@@ -66,7 +66,7 @@ const SwitchWrapper = styled.div`
   gap: 0.75rem;
 
   & > svg {
-    transition: stroke 300ms ease;
+    transition: stroke 150ms ease;
 
     stroke: ${(props) =>
       props.theme.name === "light"

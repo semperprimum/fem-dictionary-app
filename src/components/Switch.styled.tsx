@@ -42,7 +42,7 @@ const SwitchStyled = styled.span`
   inset: 0;
   border-radius: 100vmax;
 
-  transition: background-color 300ms ease;
+  transition: background-color 150ms ease;
 
   &::before {
     content: "";
