@@ -78,6 +78,7 @@ export const Dropdown = () => {
 
 const DropdownWrapper = styled.div`
   position: relative;
+  z-index: 9999;
 `;
 
 const DropdownHeader = styled.button`
