@@ -14,9 +14,9 @@ export const Spinner = () => {
 };
 
 const SpinnerWrapper = styled.div`
-  height: 20rem;
   display: grid;
   place-items: center;
+  margin-top: 10rem;
 
   @keyframes spin {
     0% {

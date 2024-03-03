@@ -7,6 +7,7 @@ import ThemeContextProvider from "./context/ThemeContext.tsx";
 import "@fontsource-variable/inconsolata";
 import "@fontsource-variable/inter";
 import "@fontsource-variable/lora";
+import "@fontsource-variable/lora/wght-italic.css";
 import FontContextProvider from "./context/FontContext.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(

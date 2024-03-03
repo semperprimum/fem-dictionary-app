@@ -4,6 +4,7 @@ import IconPlay from "../../assets/images/icon-play.svg?react";
 import { useRef } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/state";
+import { Meaning } from "..";
 
 export const Definitions = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -11,28 +12,41 @@ export const Definitions = () => {
     (state: RootState) => state.dictionary.dictionary
   );
 
+  const audio = new Audio(
+    dictionary[0].phonetics[dictionary[0].phonetics.length - 1].audio
+  );
+
   const playAudio = () => {
     audioRef.current?.pause();
-
-    const audio = new Audio(
-      dictionary[0].phonetics[dictionary[0].phonetics.length - 1].audio
-    );
 
     audioRef.current = audio;
     audioRef.current.play();
   };
+
+  const phonetics = dictionary[0].phonetic
+    ? dictionary[0].phonetic
+    : dictionary[0].phonetics[dictionary[0].phonetics.length - 1].text;
 
   return (
     <DefinitionsWrapper>
       <WordWrapper>
         <WordAndPhonetics>
           <Word>{dictionary[0].word}</Word>
-          <Phonetics>{dictionary[0].phonetic}</Phonetics>
+          <Phonetics>{phonetics}</Phonetics>
         </WordAndPhonetics>
-        <ListenButton onClick={playAudio}>
-          <IconPlay />
-        </ListenButton>
+        {dictionary[0].phonetics[dictionary[0].phonetics.length - 1].audio && (
+          <ListenButton onClick={playAudio}>
+            <IconPlay />
+          </ListenButton>
+        )}
       </WordWrapper>
+
+      {dictionary[0].meanings.map((meaning, index) => (
+        <Meaning
+          key={index}
+          meaning={meaning}
+        />
+      ))}
     </DefinitionsWrapper>
   );
 };

@@ -25,11 +25,15 @@ export const GlobalStyles = createGlobalStyle<{ $font: Font }>`
     body {
         font-family: ${(props) =>
           props.$font === "serif"
-            ? "Lora Variable"
+            ? "Lora Variable, serif"
             : props.$font === "sans"
-            ? "Inter Variable"
-            : "Inconsolata Variable"};
+            ? "Inter Variable, sans-serif"
+            : "Inconsolata Variable, monospace"};
         background-color: ${(props) => props.theme.background};
         color: ${(props) => props.theme.text};
+        font-size: var(--fs-200);
+    
+        font-style: normal;
+        font-variation-settings: "ital" 0;
     }
 `;

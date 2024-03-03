@@ -76,6 +76,7 @@ const InputField = styled.input`
   padding: none;
 
   font-size: var(--fs-300);
+  font-weight: var(--fw-bold);
   color: ${(props) => props.theme.text};
   outline: none;
 `;
