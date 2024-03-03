@@ -19,26 +19,31 @@ const App = () => {
   const font = context?.currentFont || "sans";
   const isLoading = useSelector((state: RootState) => state.dictionary.loading);
   const error = useSelector((state: RootState) => state.dictionary.error);
-
   const isBadRequest = error === "ERR_BAD_REQUEST";
 
   return (
     <AppWrapper>
-      <GlobalStyles $font={font} />
       <Reset />
+      <GlobalStyles $font={font} />
 
-      <Header />
+      <header>
+        <h1 className="sr-only">Dictionary</h1>
 
-      <InputForm />
+        <Header />
+      </header>
 
-      {isLoading && <Spinner />}
-      {!isLoading && !isBadRequest && (
-        <>
-          <Definitions />
-          <Source />
-        </>
-      )}
-      {isBadRequest && <BadRequest />}
+      <main>
+        <InputForm />
+
+        {isLoading && <Spinner />}
+        {!isLoading && !isBadRequest && (
+          <>
+            <Definitions />
+            <Source />
+          </>
+        )}
+        {isBadRequest && <BadRequest />}
+      </main>
     </AppWrapper>
   );
 };

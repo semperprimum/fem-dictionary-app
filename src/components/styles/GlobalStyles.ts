@@ -29,11 +29,28 @@ export const GlobalStyles = createGlobalStyle<{ $font: Font }>`
             : props.$font === "sans"
             ? "Inter Variable, sans-serif"
             : "Inconsolata Variable, monospace"};
-        background-color: ${(props) => props.theme.background};
-        color: ${(props) => props.theme.text};
-        font-size: var(--fs-200);
-    
-        font-style: normal;
+        background-color       : ${(props) => props.theme.background};
+        color                  : ${(props) => props.theme.text};
+        font-size              : var(--fs-200);
+        font-style             : normal;
         font-variation-settings: "ital" 0;
     }
-`;
+
+
+    /* 
+        Improved screen reader only CSS class
+        @author Gaël Poupard
+    */
+    .sr-only {
+        border           : 0 !important;
+        clip             : rect(1px, 1px, 1px, 1px) !important; 
+        -webkit-clip-path: inset(50%) !important;
+        clip-path        : inset(50%) !important;                
+        height           : 1px !important;
+        margin           : -1px !important;
+        overflow         : hidden !important;
+        padding          : 0 !important;
+        position         : absolute !important;
+        width            : 1px !important;
+        white-space      : nowrap !important;                    
+    }`;

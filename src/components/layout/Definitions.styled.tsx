@@ -13,7 +13,7 @@ export const Definitions = () => {
   );
 
   const audio = new Audio(
-    dictionary[0].phonetics[dictionary[0].phonetics.length - 1].audio
+    dictionary[0].phonetics[dictionary[0].phonetics.length - 1]?.audio
   );
 
   const playAudio = () => {
@@ -23,18 +23,27 @@ export const Definitions = () => {
     audioRef.current.play();
   };
 
-  const phonetics = dictionary[0].phonetic
-    ? dictionary[0].phonetic
-    : dictionary[0].phonetics[dictionary[0].phonetics.length - 1].text;
+  const getPhonetics = () => {
+    if (dictionary[0].phonetic) return dictionary[0].phonetic;
+
+    let phonetics = "";
+    for (const entry of dictionary[0].phonetics) {
+      if (entry.text) {
+        phonetics = entry.text;
+        break;
+      }
+    }
+    return phonetics;
+  };
 
   return (
     <DefinitionsWrapper>
       <WordWrapper>
         <WordAndPhonetics>
           <Word>{dictionary[0].word}</Word>
-          <Phonetics>{phonetics}</Phonetics>
+          {getPhonetics() && <Phonetics>{getPhonetics()}</Phonetics>}
         </WordAndPhonetics>
-        {dictionary[0].phonetics[dictionary[0].phonetics.length - 1].audio && (
+        {dictionary[0].phonetics[dictionary[0].phonetics.length - 1]?.audio && (
           <ListenButton onClick={playAudio}>
             <IconPlay />
           </ListenButton>
