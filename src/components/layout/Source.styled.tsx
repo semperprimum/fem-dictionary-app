@@ -13,11 +13,11 @@ export const Source = () => {
     <SourceWrapper>
       <SourceText>Source</SourceText>
       <SourceLink
-        href={sourceUrl && sourceUrl[0]}
+        href={sourceUrl[0]}
         target="_blank"
         rel="noopener noreferrer"
       >
-        {sourceUrl && sourceUrl[0]}
+        {sourceUrl[0]}
         <IconNewWindow aria-hidden="true" />
       </SourceLink>
     </SourceWrapper>

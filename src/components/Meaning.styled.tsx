@@ -55,6 +55,8 @@ const PartOfSpeech = styled.h3`
   font-weight: var(--fw-bold);
   font-size: var(--fs-400);
   font-style: italic;
+  background-color: ${(props) => props.theme.background};
+  z-index: -50;
 
   &::before {
     content: "";
@@ -64,6 +66,7 @@ const PartOfSpeech = styled.h3`
     top: 50%;
     height: 1px;
     background-color: ${(props) => props.theme.divider};
+    z-index: -100;
   }
 `;
 

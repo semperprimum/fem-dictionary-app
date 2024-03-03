@@ -37,7 +37,7 @@ export interface DictionaryEntry {
   phonetics: Phonetic[];
   meanings: Meaning[];
   license: License;
-  sourceUrls?: string[];
+  sourceUrls: string[];
 }
 
 interface DictionaryState {

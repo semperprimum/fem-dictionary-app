@@ -14,7 +14,7 @@ export const lightTheme = {
 export const darkTheme = {
   name: "dark",
   text: "#FFFFFF",
-  textScondary: "#757575",
+  textSecondary: "#757575",
   accent: "#A445ED",
   divider: "#3A3A3A",
   dividerSecondary: "#E9E9E9",
