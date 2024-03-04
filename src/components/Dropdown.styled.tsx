@@ -102,7 +102,7 @@ const DropdownList = styled.div`
   right: 0;
   top: 2.625rem;
 
-  padding: 1.5rem;
+  padding: 1rem 1.5rem;
   border-radius: 1rem;
   background-color: ${(props) =>
     props.theme.name === "light"
@@ -122,6 +122,8 @@ const DropdownItem = styled.button<{ $font: "serif" | "sans" | "mono" }>`
   font-weight: var(--fw-bold);
   color: ${(props) => props.theme.text};
 
+  padding-block: 0.5rem;
+
   font-family: ${(props) => {
     switch (props.$font) {
       case "sans":
@@ -133,7 +135,15 @@ const DropdownItem = styled.button<{ $font: "serif" | "sans" | "mono" }>`
     }
   }};
 
-  & + & {
-    margin-top: 0.5rem;
+  /* & {
+    margin-top: 0.5rem; */
+  /* } */
+
+  @media only screen and (min-width: 90em) {
+    cursor: pointer;
+
+    &:hover {
+      color: ${(props) => props.theme.accent};
+    }
   }
 `;

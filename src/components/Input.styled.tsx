@@ -78,6 +78,7 @@ const InputField = styled.input`
   font-size: var(--fs-300);
   font-weight: var(--fw-bold);
   color: ${(props) => props.theme.text};
+  caret-color: ${(props) => props.theme.accent};
   outline: none;
 `;
 

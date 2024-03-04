@@ -98,12 +98,39 @@ const ListenButton = styled.button`
     display: block;
     width: 3rem;
     height: 3rem;
+
+    fill: ${(props) => props.theme.accent};
+
+    & > g > circle {
+      fill-opacity: 0.25;
+    }
   }
 
-  @media only screen and (min-width: 48em) {
+  @media only screen and (min-width: 90em) {
+    cursor: pointer;
+
     & > svg {
       width: 4.6875rem;
       height: 4.6875rem;
+    }
+
+    & > svg > g {
+      & > circle {
+        transition: fill-opacity 0.2s ease;
+      }
+      & > path {
+        transition: fill 0.2s ease;
+      }
+    }
+
+    &:hover {
+      & > svg > g > circle {
+        fill-opacity: 1;
+      }
+
+      & > svg > g > path {
+        fill: #fff;
+      }
     }
   }
 `;
