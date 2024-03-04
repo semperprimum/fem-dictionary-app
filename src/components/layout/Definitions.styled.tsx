@@ -62,6 +62,12 @@ export const Definitions = () => {
 
 const DefinitionsWrapper = styled.div`
   margin-top: 1.5rem;
+  margin-bottom: 2rem;
+
+  @media only screen and (min-width: 48em) {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
 `;
 
 const WordWrapper = styled.div`
@@ -92,5 +98,12 @@ const ListenButton = styled.button`
     display: block;
     width: 3rem;
     height: 3rem;
+  }
+
+  @media only screen and (min-width: 48em) {
+    & > svg {
+      width: 4.6875rem;
+      height: 4.6875rem;
+    }
   }
 `;

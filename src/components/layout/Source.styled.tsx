@@ -27,6 +27,8 @@ export const Source = () => {
 const SourceWrapper = styled.div`
   padding-block: 1.5rem;
   font-size: var(--fs-100);
+
+  border-top: 1px solid ${(props) => props.theme.divider};
 `;
 
 const SourceText = styled.p`

@@ -48,7 +48,6 @@ export const Input: React.FC<InputProps> = (props) => {
 
 const InputWrapper = styled.div<{ $error: boolean }>`
   position: relative;
-  margin-top: 1.5rem;
   background-color: ${(props) => props.theme.inputBackground};
   padding: 0.875rem 1.5rem 0.9375rem;
   border-radius: 1rem;
@@ -64,9 +63,10 @@ const InputWrapper = styled.div<{ $error: boolean }>`
       outline: 1px solid ${props.theme.error};
       outline-offset: -1px;
     `}
-`;
-`}
 
+  @media only screen and (min-width: 48em) {
+    padding: 1.25rem 1.5rem;
+  }
 `;
 
 const InputField = styled.input`

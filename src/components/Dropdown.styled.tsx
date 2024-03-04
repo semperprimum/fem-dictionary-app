@@ -90,7 +90,7 @@ const DropdownHeader = styled.button`
   display: flex;
   align-items: center;
   gap: 1rem;
-  font-size: var(--fs-100);
+  font-size: var(--fs-200);
   font-weight: var(--fw-bold);
   color: ${(props) => props.theme.text};
 `;

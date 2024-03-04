@@ -15,7 +15,10 @@ export const Meaning: React.FC<MeaningProps> = ({ meaning }) => {
 
   return (
     <MeaningWrapper>
-      <PartOfSpeech>{meaning.partOfSpeech}</PartOfSpeech>
+      <PartOfSpeech>
+        {meaning.partOfSpeech}
+        <Divider />
+      </PartOfSpeech>
       <TextMeaning>Meaning</TextMeaning>
 
       <DefinitionsList>
@@ -48,26 +51,28 @@ export const Meaning: React.FC<MeaningProps> = ({ meaning }) => {
 
 const MeaningWrapper = styled.div`
   margin-top: 2rem;
+
+  @media only screen and (min-width: 48em) {
+    margin-top: 2.5rem;
+  }
 `;
 
 const PartOfSpeech = styled.h3`
-  position: relative;
   font-weight: var(--fw-bold);
   font-size: var(--fs-400);
   font-style: italic;
   background-color: ${(props) => props.theme.background};
-  z-index: -50;
 
-  &::before {
-    content: "";
-    position: absolute;
-    right: 0;
-    width: 81.35%;
-    top: 50%;
-    height: 1px;
-    background-color: ${(props) => props.theme.divider};
-    z-index: -100;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.25rem;
+`;
+
+const Divider = styled.div`
+  height: 1px;
+  width: 100%;
+  background-color: ${(props) => props.theme.divider};
 `;
 
 const TextMeaning = styled.span`
@@ -75,6 +80,10 @@ const TextMeaning = styled.span`
   font-size: var(--fs-300);
   color: ${(props) => props.theme.textSecondary};
   margin-top: 2rem;
+
+  @media only screen and (min-width: 48em) {
+    margin-top: 2.375rem;
+  }
 `;
 
 const DefinitionsList = styled.ul`
@@ -83,6 +92,10 @@ const DefinitionsList = styled.ul`
   margin: 0;
   padding: 0;
   margin-top: 1rem;
+
+  @media only screen and (min-width: 48em) {
+    margin-top: 1.5rem;
+  }
 `;
 
 const Definition = styled.li`
@@ -109,6 +122,10 @@ const Relation = styled.p`
 
   margin-top: 1.5rem;
   color: ${(props) => props.theme.textSecondary};
+
+  @media only screen and (min-width: 48em) {
+    margin-top: 2.5rem;
+  }
 `;
 
 const RelationLink = styled.a`

@@ -52,6 +52,10 @@ const Controls = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
+
+  @media only screen and (min-width: 48em) {
+    gap: 1.625rem;
+  }
 `;
 
 const Divider = styled.div`
@@ -68,9 +72,16 @@ const SwitchWrapper = styled.div`
   & > svg {
     transition: stroke 150ms ease;
 
+    max-width: 1.25rem;
+    max-height: 1.25rem;
+
     stroke: ${(props) =>
       props.theme.name === "light"
         ? props.theme.textSecondary
         : props.theme.accent};
+  }
+
+  @media only screen and (min-width: 48em) {
+    gap: 1.25rem;
   }
 `;

@@ -3,6 +3,7 @@ import { Input } from "..";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../store/state";
 import { fetchDictionary } from "../../store/dictionary/dictionarySlice";
+import styled from "styled-components";
 
 export const InputForm = () => {
   const [value, setValue] = useState<string>("");
@@ -19,10 +20,11 @@ export const InputForm = () => {
 
     setError("");
     dispatch(fetchDictionary(value));
+    setValue("");
   };
 
   return (
-    <form onSubmit={onSubmit}>
+    <Form onSubmit={onSubmit}>
       <Input
         value={value}
         onChange={(e: React.ChangeEvent<HTMLInputElement>): void =>
@@ -30,6 +32,14 @@ export const InputForm = () => {
         }
         error={error}
       />
-    </form>
+    </Form>
   );
 };
+
+const Form = styled.form`
+  margin-top: 1.5rem;
+
+  @media only screen and (min-width: 48em) {
+    margin-top: 3.375rem;
+  }
+`;

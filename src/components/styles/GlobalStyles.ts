@@ -13,7 +13,7 @@ export const GlobalStyles = createGlobalStyle<{ $font: Font }>`
         --fs-400: 1.125rem;   // Part of speech (18)
         --fs-500: 2rem;       // Heading (32)
 
-        @media only screen and (min-width: 37.5em) {
+        @media only screen and (min-width: 48em) {
             --fs-100: 0.875rem;
             --fs-200: 1.125rem;
             --fs-300: 1.25rem;

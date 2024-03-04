@@ -43,7 +43,7 @@ html:focus-within {
 body {
     min-height: 100vh;
     text-rendering: optimizeSpeed;
-    line-height: 1.5;
+    line-height: auto;
 }
 
 /* A elements that don't have a class get default styles */
