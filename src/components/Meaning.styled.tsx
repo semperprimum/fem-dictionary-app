@@ -17,7 +17,7 @@ export const Meaning: React.FC<MeaningProps> = ({ meaning }) => {
     <MeaningWrapper>
       <PartOfSpeech>
         {meaning.partOfSpeech}
-        <Divider />
+        <Divider aria-hidden="true" />
       </PartOfSpeech>
       <TextMeaning>Meaning</TextMeaning>
 
@@ -53,7 +53,7 @@ const MeaningWrapper = styled.div`
   margin-top: 2rem;
 
   @media only screen and (min-width: 48em) {
-    margin-top: 2.5rem;
+    margin-top: 2.3rem;
   }
 `;
 
@@ -95,6 +95,8 @@ const DefinitionsList = styled.ul`
 
   @media only screen and (min-width: 48em) {
     margin-top: 1.5rem;
+    padding-left: 1.3rem;
+    gap: 0.825rem;
   }
 `;
 
@@ -119,12 +121,18 @@ const Relation = styled.p`
   display: flex;
   column-gap: 1.5rem;
   flex-wrap: wrap;
+  font-size: var(--fs-300);
 
   margin-top: 1.5rem;
   color: ${(props) => props.theme.textSecondary};
 
   @media only screen and (min-width: 48em) {
     margin-top: 2.5rem;
+    margin-left: -2.8625rem;
+  }
+
+  @media only screen and (min-width: 90em) {
+    margin-top: 4rem;
   }
 `;
 
@@ -135,6 +143,9 @@ const RelationLink = styled.a`
 
   &:hover {
     text-decoration: underline;
+  }
+
+  @media only screen and (min-width: 90em) {
   }
 `;
 

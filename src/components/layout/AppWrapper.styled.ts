@@ -7,6 +7,6 @@ export const AppWrapper = styled.div`
 
   @media only screen and (min-width: 48em) {
     width: min(46rem, calc(100% - 5rem));
-    padding-top: 3.75rem;
+    padding-top: 3.5rem;
   }
 `;

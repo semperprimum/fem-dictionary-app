@@ -65,7 +65,7 @@ const InputWrapper = styled.div<{ $error: boolean }>`
     `}
 
   @media only screen and (min-width: 48em) {
-    padding: 1.25rem 1.5rem;
+    padding: 1.1875rem 1.5rem;
   }
 `;
 
@@ -88,7 +88,7 @@ const Button = styled.button`
   background: none;
   padding: 0;
   margin: 0;
-  right: 0.5625rem;
+  right: 0.375rem;
   top: 50%;
   transform: translateY(-50%);
   width: 3.4375rem;

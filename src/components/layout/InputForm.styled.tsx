@@ -6,7 +6,7 @@ import { fetchDictionary } from "../../store/dictionary/dictionarySlice";
 import styled from "styled-components";
 
 export const InputForm = () => {
-  const [value, setValue] = useState<string>("");
+  const [value, setValue] = useState<string>("keyboard");
   const [error, setError] = useState<string>("");
 
   const dispatch = useDispatch<AppDispatch>();
@@ -20,7 +20,6 @@ export const InputForm = () => {
 
     setError("");
     dispatch(fetchDictionary(value));
-    setValue("");
   };
 
   return (

@@ -44,8 +44,11 @@ export const Definitions = () => {
           {getPhonetics() && <Phonetics>{getPhonetics()}</Phonetics>}
         </WordAndPhonetics>
         {dictionary[0].phonetics[dictionary[0].phonetics.length - 1]?.audio && (
-          <ListenButton onClick={playAudio}>
-            <IconPlay />
+          <ListenButton
+            aria-label="play audio"
+            onClick={playAudio}
+          >
+            <IconPlay aria-hidden="true" />
           </ListenButton>
         )}
       </WordWrapper>
@@ -83,9 +86,11 @@ const Word = styled.h2`
 `;
 
 const Phonetics = styled.span`
+  display: block;
+  font-family: "Inter Variable", sans-serif;
   font-size: var(--fs-400);
   color: ${(props) => props.theme.accent};
-  margin-top: 0.5rem;
+  margin-top: 0.375rem;
 `;
 
 const ListenButton = styled.button`

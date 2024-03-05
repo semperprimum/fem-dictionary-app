@@ -93,6 +93,10 @@ const DropdownHeader = styled.button`
   font-size: var(--fs-200);
   font-weight: var(--fw-bold);
   color: ${(props) => props.theme.text};
+
+  @media only screen and (min-width: 48em) {
+    cursor: pointer;
+  }
 `;
 
 const DropdownList = styled.div`

@@ -25,6 +25,11 @@ export const Source = () => {
 };
 
 const SourceWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 1.25rem;
+  row-gap: 0.4375rem;
   padding-block: 1.5rem;
   font-size: var(--fs-100);
 
@@ -33,7 +38,6 @@ const SourceWrapper = styled.div`
 
 const SourceText = styled.p`
   color: ${(props) => props.theme.textSecondary};
-  margin-bottom: 0.4375rem;
   text-decoration: underline;
 `;
 

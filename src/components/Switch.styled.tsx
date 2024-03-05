@@ -23,6 +23,10 @@ const SwitchWrapper = styled.label`
   display: inline-block;
   width: 2.5rem;
   height: 1.25rem;
+
+  @media only screen and (min-width: 90em) {
+    cursor: pointer;
+  }
 `;
 
 const SwitchInput = styled.input`

@@ -46,6 +46,13 @@ const HeaderContainer = styled.div`
     height: 2rem;
     width: 1.75rem;
   }
+
+  @media only screen and (min-width: 90em) {
+    & > svg {
+      height: 2.28125rem;
+      width: 2rem;
+    }
+  }
 `;
 
 const Controls = styled.div`
